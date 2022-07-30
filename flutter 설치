@@ -1,0 +1,13 @@
+flutter 설치하기
+압축풀어서 C드라이브에 복사붙여넣기 src폴더에 압축풀라고 하는데 나는 그냥 C드라이브에 압축붙여넣기 함.
+
+환경변수 검색창에 env 검색해서 path에 flutter/bin파일까지 환경변수저장
+
+cmd 에서 flutter doctor 쓰기
+
+안드로이드 스튜디오 설치
+
+
+
+
+블로그 : https://blog.naver.com/youchanj67/222719460912
