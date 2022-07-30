@@ -7,6 +7,25 @@ cmd 에서 flutter doctor 쓰기
 
 안드로이드 스튜디오 설치
 
+sdk cmd line 안됀다고 해서 블로그로 따라함
+블로그 : https://blog.naver.com/PostView.naver?blogId=chandong83&logNo=222523368305
+
+
+하니깐
+[√] Flutter (Channel stable, 3.0.5, on Microsoft Windows [Version 10.0.19044.1826], locale ko-KR)
+[√] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+[√] Chrome - develop for the web
+[X] Visual Studio - develop for Windows
+    X Visual Studio not installed; this is necessary for Windows development.
+      Download at https://visualstudio.microsoft.com/downloads/.
+      Please install the "Desktop development with C++" workload, including all of its default components
+[√] Android Studio (version 2021.2)
+[√] VS Code (version 1.68.1)
+[√] Connected device (3 available)
+[√] HTTP Host Availability
+
+비주얼 스튜디오만 빼고 다 체크됐다..
+딱히 상관없겠지..?
 
 
 
