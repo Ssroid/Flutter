@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+//안됄떄는 디버깅을 다시하기
+
+// 빌더 위젯없이 스낵바 만들기, Toast message 구현하기
 
 void main() => runApp(MyApp());
 
@@ -8,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Title',
       theme: ThemeData(
-        primarySwatch: Colors.brown
+          primarySwatch: Colors.red
       ),
       home: Mypage(),
     );
@@ -23,6 +26,49 @@ class Mypage extends StatelessWidget {
         title: Text('Snack bar'),
         centerTitle: true,
         elevation: 0.0,
+      ), 
+        body: MySnackBar(),
+      
+      /*
+      body: Builder(builder: (BuildContext ctx) {
+        return Center(
+          child: FlatButton(
+            child: Text('Show me',
+              style: TextStyle(
+                  color: Colors.white
+              ),
+            ),
+            color: Colors.red,
+            onPressed:() {
+              Scaffold.of(ctx).showSnackBar(SnackBar(content: Text('Hello'),));
+            }, //ctx로 builder 로 context로? 가지 않고 아래에 하위바가 생성됐다가 사라짐
+          ), //입체갑없이 버튼만 출력
+        );
+      },)
+*/ //빨간 버튼
+      
+    );
+  }
+}
+
+class MySnackBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center( //앤또 먼 함수이래?
+      child: RaisedButton( //버튼을 누르면 앞으로 튀어나오는것같은
+        child: Text('Show'),
+        onPressed: () {
+          Scaffold.of(context).showSnackBar(SnackBar(content: Text('HHHHHHeee',
+          textAlign: TextAlign.center, //하단바 글씨나오는 위치
+          style: TextStyle(
+            color: Colors.white //안의 글씨 색깔
+          ),
+          ),
+            backgroundColor: Colors.teal,
+            duration: Duration(milliseconds: 3000), //하단바 나오는 시간
+          ),
+          );
+        },
       ),
     );
   }
