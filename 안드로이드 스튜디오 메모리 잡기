@@ -1,0 +1,6 @@
+
+
+C:\Program Files\Android\Android Studio\bin
+파일에서 studio64.exe.vmoptions 에서 메모장으로 xmx512m , xmx256m 으로 변경하기
+
+관리자 권한으로 하라 할시에 그냥 속성 - 보안 에서 다 체크 해주고 저장해주기
