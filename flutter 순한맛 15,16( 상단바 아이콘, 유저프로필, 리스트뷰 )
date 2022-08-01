@@ -1,0 +1,118 @@
+import 'package:flutter/material.dart';
+
+void main()=> runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Appbar',
+      theme: ThemeData(
+        primarySwatch: Colors.red
+      ),
+      home: Mypage(),
+    );
+  }
+}
+
+class Mypage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Appbar icon menu'), //상단타이틀을 지정
+        centerTitle: true,
+        elevation: 0.0, //입체감을 없애기
+        /*
+        leading: IconButton( //아이콘 메뉴 만들기,
+          //leading은 아이콘 버튼이나 간단한 위젯을 왼쪽에 배치할때
+          icon: Icon(Icons.menu),
+          onPressed: () { //버튼을 눌렀을때 이벤트 발생
+            print('menu button isss clicked'); //위의 상단바 3개짜리 클릭시 출력
+          },
+        ),
+        */
+        actions: <Widget>[ //
+          //복수의 아이콘 버튼등을 오른쪽에 배치할떄
+          IconButton( //쇼핑 메뉴 만들기
+            icon: Icon(Icons.shopping_cart),
+            onPressed: () {
+              print('cart button is clicked');
+            },
+          ),
+          IconButton( // 메뉴 만들기
+            icon: Icon(Icons.search),
+            onPressed: () {
+              print('search button is clicked'); //위의 상단바 3개짜리 클릭시 출력
+            },
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[ //그 안에 들어가는 것이므로 차일드를 사용
+            UserAccountsDrawerHeader( //유저 정보를 보여주는 것 사진과 계정의 이름과 이메일 필요
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/pin.jpg'),
+                backgroundColor: Colors.red,
+              ),
+              otherAccountsPictures: <Widget>[
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/Owl.jpg'),
+                  backgroundColor: Colors.red,
+                ),
+                // CircleAvatar( //두개 할시에는 왼쪽올 점점 추가
+                //   backgroundImage: AssetImage('assets/Owl.jpg'),
+                //   backgroundColor: Colors.red,
+                // ),
+              ],
+              accountName: Text('Pin'),
+              accountEmail: Text('Pin.com'),
+              onDetailsPressed:() { //계정 오른쪽에 화살표가 추가 디테일을 추가함
+                print('arrow is clicked');
+              },
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(30.0),
+                  bottomRight: Radius.circular(30.0),
+                ) 
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home,
+              color: Colors.grey[850],
+              ),
+              title: Text('Home Bar'),
+              onTap: (){
+                print("Home is Cliked");
+              },
+              trailing: Icon(Icons.add), //옆에 + 아이콘 추가
+            ),
+            ListTile(
+              leading: Icon(Icons.settings,
+                color: Colors.grey[850],
+              ),
+              title: Text('Settings'),
+              onTap: (){
+                print("Settings is Cliked");
+              },
+              trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(Icons.question_mark,
+                color: Colors.grey[850],
+              ),
+              title: Text('Question'),
+              onTap: (){
+                print("Query is Cliked");
+              },
+              trailing: Icon(Icons.add),
+            )
+          ],
+        ), //여러줄을 리스트로 보여주는 것
+      ),
+    );
+  }
+}
