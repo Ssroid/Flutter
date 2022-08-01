@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Title',
+      theme: ThemeData(
+        primarySwatch: Colors.brown
+      ),
+      home: Mypage(),
+    );
+  }
+}
+
+class Mypage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Snack bar'),
+        centerTitle: true,
+        elevation: 0.0,
+      ),
+    );
+  }
+}
